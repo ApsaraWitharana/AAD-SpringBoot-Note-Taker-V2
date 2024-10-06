@@ -35,6 +35,9 @@ dependencies {
 	implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.2.1'
 // https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.3.4'
+
 
 
 
