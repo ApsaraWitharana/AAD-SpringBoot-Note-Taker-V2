@@ -1,6 +1,6 @@
 package lk.ijse.gdse68.notetrakerV2.entity;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

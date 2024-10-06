@@ -1,18 +1,17 @@
 package lk.ijse.gdse68.notetrakerV2.service;
 
-import lk.ijse.gdse68.notetraker.customObj.UserErrorResponse;
-import lk.ijse.gdse68.notetraker.customObj.UserResponse;
-import lk.ijse.gdse68.notetraker.dao.UserDAO;
-import lk.ijse.gdse68.notetraker.dto.iml.UserDTO;
-import lk.ijse.gdse68.notetraker.entity.UserEntity;
-import lk.ijse.gdse68.notetraker.exception.DataPersistFailedException;
-import lk.ijse.gdse68.notetraker.exception.UserNotFountException;
-import lk.ijse.gdse68.notetraker.util.AppUtil;
-import lk.ijse.gdse68.notetraker.util.Mapping;
+import lk.ijse.gdse68.notetrakerV2.customObj.UserErrorResponse;
+import lk.ijse.gdse68.notetrakerV2.customObj.UserResponse;
+import lk.ijse.gdse68.notetrakerV2.dao.UserDAO;
+import lk.ijse.gdse68.notetrakerV2.dto.iml.UserDTO;
+import lk.ijse.gdse68.notetrakerV2.entity.UserEntity;
+import lk.ijse.gdse68.notetrakerV2.exception.DataPersistFailedException;
+import lk.ijse.gdse68.notetrakerV2.exception.UserNotFountException;
+import lk.ijse.gdse68.notetrakerV2.util.AppUtil;
+import lk.ijse.gdse68.notetrakerV2.util.Mapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;

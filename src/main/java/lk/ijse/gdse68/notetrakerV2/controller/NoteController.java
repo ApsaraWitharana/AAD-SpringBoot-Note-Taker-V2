@@ -1,10 +1,10 @@
 package lk.ijse.gdse68.notetrakerV2.controller;
 
-import lk.ijse.gdse68.notetraker.customObj.NoteResponse;
-import lk.ijse.gdse68.notetraker.dto.iml.NoteDTO;
-import lk.ijse.gdse68.notetraker.exception.DataPersistFailedException;
-import lk.ijse.gdse68.notetraker.exception.NoteNoteFound;
-import lk.ijse.gdse68.notetraker.service.NoteService;
+import lk.ijse.gdse68.notetrakerV2.customObj.NoteResponse;
+import lk.ijse.gdse68.notetrakerV2.dto.iml.NoteDTO;
+import lk.ijse.gdse68.notetrakerV2.exception.DataPersistFailedException;
+import lk.ijse.gdse68.notetrakerV2.exception.NoteNoteFound;
+import lk.ijse.gdse68.notetrakerV2.service.NoteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

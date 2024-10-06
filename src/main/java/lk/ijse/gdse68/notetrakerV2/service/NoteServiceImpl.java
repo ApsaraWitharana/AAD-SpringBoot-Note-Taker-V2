@@ -1,18 +1,17 @@
 package lk.ijse.gdse68.notetrakerV2.service;
 
-import lk.ijse.gdse68.notetraker.customObj.NoteErrorResponse;
-import lk.ijse.gdse68.notetraker.customObj.NoteResponse;
-import lk.ijse.gdse68.notetraker.dao.NoteDAO;
-import lk.ijse.gdse68.notetraker.dto.iml.NoteDTO;
 
-import lk.ijse.gdse68.notetraker.entity.NoteEntity;
-import lk.ijse.gdse68.notetraker.exception.DataPersistFailedException;
-import lk.ijse.gdse68.notetraker.exception.NoteNoteFound;
-import lk.ijse.gdse68.notetraker.util.AppUtil;
-import lk.ijse.gdse68.notetraker.util.Mapping;
+import lk.ijse.gdse68.notetrakerV2.customObj.NoteErrorResponse;
+import lk.ijse.gdse68.notetrakerV2.customObj.NoteResponse;
+import lk.ijse.gdse68.notetrakerV2.dao.NoteDAO;
+import lk.ijse.gdse68.notetrakerV2.dto.iml.NoteDTO;
+import lk.ijse.gdse68.notetrakerV2.entity.NoteEntity;
+import lk.ijse.gdse68.notetrakerV2.exception.DataPersistFailedException;
+import lk.ijse.gdse68.notetrakerV2.exception.NoteNoteFound;
+import lk.ijse.gdse68.notetrakerV2.util.AppUtil;
+import lk.ijse.gdse68.notetrakerV2.util.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;

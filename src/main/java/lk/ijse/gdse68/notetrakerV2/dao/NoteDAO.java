@@ -1,6 +1,7 @@
 package lk.ijse.gdse68.notetrakerV2.dao;
 
-import lk.ijse.gdse68.notetraker.entity.NoteEntity;
+
+import lk.ijse.gdse68.notetrakerV2.entity.NoteEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

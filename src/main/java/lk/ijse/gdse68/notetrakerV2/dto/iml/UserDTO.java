@@ -1,7 +1,7 @@
 package lk.ijse.gdse68.notetrakerV2.dto.iml;
 
-import lk.ijse.gdse68.notetraker.customObj.UserResponse;
-import lk.ijse.gdse68.notetraker.dto.SuperDTO;
+import lk.ijse.gdse68.notetrakerV2.customObj.UserResponse;
+import lk.ijse.gdse68.notetrakerV2.dto.SuperDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

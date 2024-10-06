@@ -1,7 +1,9 @@
 package lk.ijse.gdse68.notetrakerV2.service;
 
-import lk.ijse.gdse68.notetraker.customObj.UserResponse;
-import lk.ijse.gdse68.notetraker.dto.iml.UserDTO;
+
+
+import lk.ijse.gdse68.notetrakerV2.customObj.UserResponse;
+import lk.ijse.gdse68.notetrakerV2.dto.iml.UserDTO;
 
 import java.util.List;
 
