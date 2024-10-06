@@ -1,6 +1,7 @@
 package lk.ijse.gdse68.notetrakerV2.service;
 
 
+import jakarta.transaction.Transactional;
 import lk.ijse.gdse68.notetrakerV2.customObj.NoteErrorResponse;
 import lk.ijse.gdse68.notetrakerV2.customObj.NoteResponse;
 import lk.ijse.gdse68.notetrakerV2.dao.NoteDAO;

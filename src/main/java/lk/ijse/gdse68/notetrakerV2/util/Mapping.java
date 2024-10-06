@@ -5,6 +5,8 @@ import lk.ijse.gdse68.notetrakerV2.dto.iml.NoteDTO;
 import lk.ijse.gdse68.notetrakerV2.dto.iml.UserDTO;
 import lk.ijse.gdse68.notetrakerV2.entity.NoteEntity;
 import lk.ijse.gdse68.notetrakerV2.entity.UserEntity;
+import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
