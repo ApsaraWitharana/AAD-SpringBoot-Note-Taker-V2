@@ -1,0 +1,6 @@
+#spring:
+#  application:
+#    name: notetrakerV2
+#
+#server:
+#  port: 5055
