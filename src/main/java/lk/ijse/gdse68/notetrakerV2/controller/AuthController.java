@@ -16,12 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("api/v1/auth")
 public class AuthController {
-    private final UserService userService;
-
-    public AuthController(UserService userService) {
-        this.userService = userService;
-    }
-
     //resolving
     @PostMapping(value = "signUp",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<JWTResponse>signUn(
