@@ -13,6 +13,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
+import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -45,7 +47,10 @@ public class JWTConfig extends OncePerRequestFilter {
           var lordUser =   userService.userDetailsService().loadUserByUsername(userEmail); // user data set
           if (jwtService.isTokenValid(jwtToken,lordUser)){
            SecurityContext emptyContext = SecurityContextHolder.createEmptyContext();
-              UsernamePasswordAuthenticationToken newContext = new UsernamePasswordAuthenticationToken(lordUser, null, lordUser.getAuthorities());
+              UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(lordUser, null, lordUser.getAuthorities());
+              authToken.setDetails(new WebAuthenticationDetails(request));
+              emptyContext.setAuthentication(authToken);
+              SecurityContextHolder.setContext(emptyContext);
           }
         }
     }
