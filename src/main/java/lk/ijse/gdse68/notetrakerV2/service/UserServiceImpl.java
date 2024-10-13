@@ -12,6 +12,7 @@ import lk.ijse.gdse68.notetrakerV2.util.AppUtil;
 import lk.ijse.gdse68.notetrakerV2.util.Mapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -112,6 +113,12 @@ public class UserServiceImpl implements UserService{
         //        List<UserEntity> getAllUsers = userDao.findAll();
         //        return mapping.convertUserToDTOList(getAllUsers);
         //    }
+    }
+
+    @Override
+    public UserDetailsService userDetailsService() {
+       return email -> userDAO.findByEmail(email)
+               .orElseThrow(()-> new UserNotFountException()); //user entity kt details eke behavioral tikt add krn one
     }
     //req-http://localhost:8080/note/api/v1/users
     //resp-[

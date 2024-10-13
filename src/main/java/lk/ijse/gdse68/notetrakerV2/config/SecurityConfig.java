@@ -1,5 +1,6 @@
 package lk.ijse.gdse68.notetrakerV2.config;
 
+import lk.ijse.gdse68.notetrakerV2.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +24,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
+
+    private final UserService userService;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
      http.csrf(AbstractHttpConfigurer::disable)
@@ -31,7 +34,7 @@ public class SecurityConfig {
                      .anyRequest().authenticated() // uda tiyen ewa ar en one ekk permite krnn ona
              )
              .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-             .authenticationProvider()
+             .authenticationProvider(authenticationProvider())
              .addFilterBefore();
      //restfull -section ex
         return http.build();
@@ -44,7 +47,7 @@ public class SecurityConfig {
     @Bean
     public AuthenticationProvider authenticationProvider(){
         DaoAuthenticationProvider dap = new DaoAuthenticationProvider(); // user email base krl db eken eliyt gnnw
-        dap.setUserDetailsService(); //db eken user wa gnna
+        dap.setUserDetailsService(userService.userDetailsService()); //db eken user wa gnna
         dap.setPasswordEncoder(passwordEncoder()); //
         return dap;
     }
