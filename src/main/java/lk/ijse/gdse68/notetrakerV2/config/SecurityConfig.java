@@ -1,5 +1,6 @@
 package lk.ijse.gdse68.notetrakerV2.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -11,6 +12,12 @@ import org.springframework.security.web.DefaultSecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
+    @Value("${secure.basic.username}")
+    String username;
+    @Value(("${secure.basic.password}"))
+    String password;
+    @Value(("${secure.basic.role}"))
+    String role;
     @Bean
     public DefaultSecurityFilterChain securityFilterChange (HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
@@ -27,9 +34,9 @@ public class SecurityConfig {
     public InMemoryUserDetailsManager inMemoryUserDetailsManager(){
         //password is not get plaintext  is this conversing this default password encode
        UserDetails principleUser = User.withDefaultPasswordEncoder()
-                .username("Sachini")
-               .password("sachi123")
-                .roles("admin") //refund robin
+                .username(username)
+               .password(password)
+                .roles(role) //refund robin
                .build();
        return new InMemoryUserDetailsManager(principleUser);
 
