@@ -4,7 +4,9 @@ import lk.ijse.gdse68.notetrakerV2.dto.iml.UserDTO;
 import lk.ijse.gdse68.notetrakerV2.exception.DataPersistFailedException;
 import lk.ijse.gdse68.notetrakerV2.jwtModel.JWTResponse;
 import lk.ijse.gdse68.notetrakerV2.jwtModel.SignIn;
+import lk.ijse.gdse68.notetrakerV2.service.UserService;
 import lk.ijse.gdse68.notetrakerV2.util.AppUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,11 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("api/v1/auth")
 public class AuthController {
+    private final UserService userService;
+
+    public AuthController(UserService userService) {
+        this.userService = userService;
+    }
 
     //resolving
     @PostMapping(value = "signUp",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
