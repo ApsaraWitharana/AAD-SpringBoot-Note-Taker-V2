@@ -17,6 +17,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -26,6 +27,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class SecurityConfig {
 
     private final UserService userService;
+    private final JWTConfig jwtConfigFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
      http.csrf(AbstractHttpConfigurer::disable)
@@ -35,7 +37,7 @@ public class SecurityConfig {
              )
              .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
              .authenticationProvider(authenticationProvider())
-             .addFilterBefore();
+             .addFilterBefore(jwtConfigFilter, UsernamePasswordAuthenticationFilter.class); // passing the filter type
      //restfull -section ex
         return http.build();
 }
