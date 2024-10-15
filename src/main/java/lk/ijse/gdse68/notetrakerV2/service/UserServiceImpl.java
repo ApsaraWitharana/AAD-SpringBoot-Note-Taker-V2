@@ -72,7 +72,7 @@ public class UserServiceImpl implements UserService{
     @Override
     public UserResponse getSelectedUser(String usrId) {
         if( userDAO.existsById(usrId)){
-            UserEntity userEntityByUserId =userDAO.getUserEntityByUserId(usrId);
+            UserEntity userEntityByUserId = userDAO.getReferenceById(usrId);
             return mapping.convertToUserDTO(userEntityByUserId);
         }else {
             return new UserErrorResponse(0,"User not found!!"); //(0,"User not found!!")-ekm project eke language 2/3 k use weddi mek dnw error handle krnn

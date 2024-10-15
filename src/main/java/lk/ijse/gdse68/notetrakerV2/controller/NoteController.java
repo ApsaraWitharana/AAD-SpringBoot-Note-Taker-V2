@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.security.access.prepost.PreAuthorize;
 import java.util.List;
 
 @RestController
@@ -63,6 +63,7 @@ public class NoteController {
         //NoteDTO(noteId=NODE: 1aab0adb-89d2-4534-88de-c922cc8ba730, noteTitle=Rest sevices, noteDesc=Explaing the rest, priorityLevel=P1, createDate=20240818)
         //resp -Note saved successfully with ID: NODE: eaaef5c2-8fd3-4713-a276-248f51508929 set this resp to BO  layer
     }
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(value = "allnotes",produces = MediaType.APPLICATION_JSON_VALUE)
     public List<NoteDTO> getAllNote(){
        return noteService.getAllNotes();

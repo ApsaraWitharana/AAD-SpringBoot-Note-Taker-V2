@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface UserDAO extends JpaRepository<UserEntity,String> {
-   UserEntity getUserEntityByUserId(String userId);//data jpa wlin method ek coll krnw
+//   UserEntity getUserEntityByUserId(String userId);//data jpa wlin method ek coll krnw
    Optional<UserEntity> findByEmail(String email);
    //JPQL -RND - nati ekk set krgnn
 

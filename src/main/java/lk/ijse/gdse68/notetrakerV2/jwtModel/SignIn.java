@@ -11,5 +11,6 @@ import lombok.NoArgsConstructor;
 @Builder //working to builder design pattern
 public class SignIn {
     private String email;
+    private String password;
 
 }
